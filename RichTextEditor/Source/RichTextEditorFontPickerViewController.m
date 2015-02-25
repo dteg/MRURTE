@@ -29,6 +29,7 @@
 
 @implementation RichTextEditorFontPickerViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -85,6 +86,8 @@
 
 #pragma mark - IBActions -
 
+
+
 - (void)closeSelected:(id)sender
 {
 	[self.delegate richTextEditorFontPickerViewControllerDidSelectClose];
@@ -115,6 +118,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSString *fontName = [self.fontNames objectAtIndex:indexPath.row];
+    //enqueue(fontName);
 	[self.delegate richTextEditorFontPickerViewControllerDidSelectFontWithName:fontName];
 }
 
@@ -133,4 +137,20 @@
 	return _tableview;
 }
 
+
+//this is just temporary for the queue
+/*- (void) dequeue
+{
+    [_MRUArray removeObjectAtIndex:0];
+}
+
+-(void) enqueue:(id)NewObject
+{
+    [_MRUArray addObject:NewObject];
+}
+*/
+
 @end
+
+
+
