@@ -37,5 +37,5 @@
 @property (nonatomic, strong) NSMutableArray *MRUArray;
 -(void) dequeue;
 -(void)enqueue:(id)NewObject;
-
+extern int GlobalSize;
 @end
